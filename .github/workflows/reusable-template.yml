@@ -1,0 +1,58 @@
+name: Reusable Template 
+
+on:
+
+  workflow_call:
+
+    inputs:
+
+      org_b_repo:
+
+        required: true
+
+        type: string
+
+      org_b_ref:
+
+        required: false
+
+        type: string
+
+        default: 'main'
+
+    secrets:
+
+      APPSERVICEPAT:
+        required: true
+
+jobs:
+
+  run-appservice-code:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Checkout app-service Repo
+
+        uses: actions/checkout@v4
+
+        with:
+
+          repository: ${{ inputs.org_b_repo }}
+
+          ref: ${{ inputs.org_b_ref }}
+
+          token: ${{ secrets.APPSERVICEPAT }}
+
+ 
+
+      - name: Run a script from appservice repo
+
+        run: |
+
+          echo "Running code from appservice"
+
+          ls -la
+
+          # ./test.sh
