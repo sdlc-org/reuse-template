@@ -12,7 +12,7 @@ on:
         default: 'main'
 
     secrets:
-      appservicepat:
+      ORG_B_PAT:
         required: true
 
 jobs:
@@ -24,7 +24,7 @@ jobs:
         with:
           repository: ${{ inputs.org_b_repo }}
           ref: ${{ inputs.org_b_ref }}
-          token: ${{ secrets.appservicepat }} 
+          token: ${{ secrets.ORG_B_PAT }} 
 
       - name: Run a script from appservice repo
         run: |
