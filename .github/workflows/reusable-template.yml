@@ -11,9 +11,9 @@ on:
         type: string
         default: 'main'
 
-    # secrets:
-    #   ORG_B_PAT:
-    #     required: true
+    secrets:
+      appservicepat:
+        required: true
 
 jobs:
   run-appservice-code:
