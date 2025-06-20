@@ -43,7 +43,7 @@ jobs:
 
           ref: ${{ inputs.org_b_ref }}
 
-          token: ${{ secrets.APPSERVICEPAT }}
+          token: ${{ secrets.ORG_B_PAT }}
 
  
 
